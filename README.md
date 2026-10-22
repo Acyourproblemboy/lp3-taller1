@@ -1,176 +1,28 @@
-# API de Videos
+# Lenguaje de Programación 3 - Taller 1
 
-Esta es una API RESTful para gestión de videos, desarrollada con Flask, Flask-RESTful y SQLAlchemy.
+![commits](https://badgen.net/github/commits/clubdecomputacion/lp3-taller1?icon=github) 
+![last_commit](https://img.shields.io/github/last-commit/clubdecomputacion/lp3-taller1)
 
-## Descripción
+- ver [badgen](https://badgen.net/) o [shields](https://shields.io/) para otros tipos de _badges_
 
-El proyecto implementa una API simple para gestionar información sobre videos, permitiendo:
+## Autor
 
-- Crear nuevos videos
-- Consultar videos existentes
-- Actualizar información de videos
-- Eliminar videos
+- [@estudiante](https://www.github.com/estudiante)
 
-Cada video tiene los siguientes atributos:
-- ID: Identificador único del video
-- Nombre: Título del video
-- Vistas: Número de reproducciones
-- Likes: Número de "me gusta"
+## Descripción del Proyecto
 
-## Estructura del Proyecto
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut quam dolor. Quisque elementum est sed massa gravida convallis. Donec volutpat turpis eget lectus feugiat congue. Morbi rutrum auctor eleifend. Etiam iaculis libero tellus, vel aliquet erat tempor sed. Duis efficitur quam vel sapien luctus, sed semper lacus mollis. Suspendisse non nunc eleifend, aliquet elit eget, condimentum augue.
 
-```
-lp3-taller1
-├── app.py                  # Archivo principal para ejecutar la aplicación
-├── config.py               # Configuración de la aplicación
-├── models/
-│   ├── __init__.py         # Inicializa el módulo models
-│   └── video.py            # Modelo de datos para Video
-├── resources/
-│   ├── __init__.py         # Inicializa el módulo resources
-│   └── video.py            # Recursos y rutas para Video
-├── database.db             # Base de datos SQLite (generada automáticamente)
-├── requirements.txt        # Dependencias del proyecto
-└── README.md               # Documentación del proyecto
-```
-
-## Requisitos
-
-- Python 3.8 o superior
-- pip (gestor de paquetes de Python)
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus vel nibh fringilla, porta elit vel, consequat libero. Nulla et libero ac nulla ultricies sollicitudin. Sed viverra non nulla id convallis. Morbi vel varius lacus, in maximus nunc. Praesent sed semper diam. Pellentesque vehicula nulla augue, ut porta dolor consequat at.
 
 ## Instalación
 
-1. Clonar el repositorio:
-   ```
-   git clone https://github.com/UR-CC/lp3-taller1.git
-   cd lp3-taller1
-   ```
+Morbi quam lectus, tempus sit amet mi non, facilisis dignissim erat. Aenean tortor libero, rhoncus eu eleifend ut, volutpat id nisi. Ut porta eros at ante rutrum pharetra. Integer nec nulla dictum, vestibulum ligula id, hendrerit ex. Morbi eget tortor metus.
 
-2. Crear un entorno virtual:
-   ```
-   python -m venv venv
-   ```
-
-3. Activar el entorno virtual:
-     ```
-     source venv/bin/activate
-     ```
-
-4. Instalar las dependencias:
-   ```
-   pip install -r requirements.txt
-   ```
-
-## Ejecución
-
-1. Iniciar el servidor de desarrollo:
-   ```
-   python app.py
-   ```
-
-2. El servidor estará disponible en `http://localhost:5000`
-
-## Uso de la API
-
-### Obtener un video
-
-```
-GET /api/videos/{id}
+1. Clonar el proyecto
+```bash
+git clone https://github.com/clubdecomputacion/lp3-taller1.git
 ```
 
-Respuesta:
-```json
-{
-  "id": 1,
-  "name": "Tutorial de Python",
-  "views": 1500,
-  "likes": 120
-}
-```
-
-### Crear un nuevo video
-
-```
-PUT /api/videos/{id}
-```
-
-Cuerpo de la solicitud:
-```json
-{
-  "name": "Tutorial de Flask",
-  "views": 0,
-  "likes": 0
-}
-```
-
-### Actualizar un video
-
-```
-PATCH /api/videos/{id}
-```
-
-Cuerpo de la solicitud (campos opcionales):
-```json
-{
-  "views": 2500,
-  "likes": 200
-}
-```
-
-### Eliminar un video
-
-```
-DELETE /api/videos/{id}
-```
-
-## Desarrollo del Taller
-
-1. Ajustar este `README.md` con los datos del Estudiante
-
-2. Realizar un `commit` por cada ajuste realizando, deben buscar los comentarios `# TODO:`
-
-3. Completar el archivo `app.py`
-
-4. Completar el archivo `resources/video.py`
-
-5. Elaborar un documento con las pruebas realizar para cada método del API REST.
-
-6. Implementar una (1) de las sugerencias que se presentan a continuación.
-
-### Sugerencias de Mejora
-
-1. **Autenticación y autorización**:
-   - Implementar JWT para autenticar usuarios
-   - Definir roles y permisos
-
-2. **Documentación**:
-   - Integrar Swagger/OpenAPI para documentar la API
-   - Añadir ejemplos de uso
-
-3. **Validación de datos**:
-   - Mejorar la validación de entrada con marshmallow o similar
-   - Manejar errores de forma más específica
-
-4. **Funcionalidades adicionales**:
-   - Añadir búsqueda y filtrado
-   - Implementar paginación
-   - Añadir endpoints para obtener todos los videos
-   - Implementar sistema de categorías/etiquetas
-
-5. **Migración de Base de datos**:
-   - Implementar Flask-Migrate para gestionar cambios en el esquema
-
-6. **Pruebas**:
-   - Añadir pruebas unitarias
-   - Implementar pruebas de integración
-   - Configurar CI/CD
-
-7. **Registro y monitoreo**:
-   - Implementar logging
-   - Añadir métricas y monitoreo
-
-8. **Despliegue**:
-   - Dockerizar la aplicación
-   - Configurar para entornos de producción
+2. Revisar la [`GUIA.md`](docs/GUIA.md)
 

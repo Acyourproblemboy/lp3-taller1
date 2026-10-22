@@ -1,30 +1,43 @@
 """
-Configuración de la aplicación Flask
+Configuración de la aplicación Flask.
+
+Cada clase representa un ambiente. La función create_app() recibe el
+nombre del ambiente y carga la clase correspondiente.
 """
 
-# Configuración para el entorno de desarrollo
+
 class DevelopmentConfig:
+    """Configuración para el entorno de desarrollo."""
+
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///database.db'
+    # Con Flask-SQLAlchemy 3.x, una ruta relativa de SQLite se crea dentro
+    # de la carpeta instance/ (instance/database.db)
+    SQLALCHEMY_DATABASE_URI = "sqlite:///database.db"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-# Configuración para el entorno de producción
+
 class ProductionConfig:
+    """Configuración para el entorno de producción."""
+
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///database.db'  # En producción se recomendaría usar una BD más robusta
+    # En producción se recomendaría usar un motor más robusto (PostgreSQL, MySQL)
+    SQLALCHEMY_DATABASE_URI = "sqlite:///database.db"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-# Configuración para pruebas
+
 class TestingConfig:
+    """Configuración para pruebas: base de datos en memoria."""
+
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
+    SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-# Diccionario para seleccionar la configuración según el entorno
+
+# Diccionario para seleccionar la configuración según el ambiente
 config = {
-    'development': DevelopmentConfig,
-    'production': ProductionConfig,
-    'testing': TestingConfig,
-    'default': DevelopmentConfig
+    "development": DevelopmentConfig,
+    "production": ProductionConfig,
+    "testing": TestingConfig,
+    "default": DevelopmentConfig,
 }
 

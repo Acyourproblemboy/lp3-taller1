@@ -1,8 +1,11 @@
 """
-Inicialización del módulo models
+Inicialización del paquete models.
+
+Aquí se crea la instancia de SQLAlchemy que usan todos los modelos.
+Se asocia a la aplicación Flask en create_app() con db.init_app(app).
 """
+
 from flask_sqlalchemy import SQLAlchemy
 
-# Instancia de SQLAlchemy que será inicializada en app.py
 db = SQLAlchemy()
 
