@@ -15,6 +15,7 @@ from app import create_app
 app = create_app(os.getenv("FLASK_CONFIG", "development"))
 
 if __name__ == "__main__":
+     Ejecutar la aplicación con app.run(debug=True) para que se reinicie
     app.run(debug=True)
     pass
 
