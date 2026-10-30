@@ -95,4 +95,32 @@ class Video(Resource):
         db.session.delete(video)
         db.session.commit()
         return "", 204
+
+# Parser para parámetros de consulta (Query Parameters) en GET /api/videos
+video_query_args = reqparse.RequestParser()
+video_query_args.add_argument("name", type=str, location="args", help="Filtrar por nombre")
+video_query_args.add_argument("page", type=int, default=1, location="args", help="Número de página")
+video_query_args.add_argument("per_page", type=int, default=10, location="args", help="Elementos por página")
+
+
+class VideoList(Resource):
+    """Recurso para gestionar la colección de videos (ruta /api/videos)."""
+
+    @marshal_with(resource_fields)
+    def get(self):
+        """Obtiene la lista de videos con opciones de búsqueda y paginación."""
+        args = video_query_args.parse_args()
+        query = VideoModel.query
+
+        # Búsqueda por nombre (coincidencia parcial)
+        if args["name"]:
+            query = query.filter(VideoModel.name.ilike(f"%{args['name']}%"))
+
+        # Paginación
+        page = args["page"]
+        per_page = args["per_page"]
+        pagination = query.paginate(page=page, per_page=per_page, error_out=False)
+
+        return pagination.items
+
    
