@@ -1,28 +1,40 @@
 # Lenguaje de Programación 3 - Taller 1
 
-![commits](https://badgen.net/github/commits/clubdecomputacion/lp3-taller1?icon=github) 
-![last_commit](https://img.shields.io/github/last-commit/clubdecomputacion/lp3-taller1)
+![commits](https://badgen.net/github/commits/Acyourproblemboy/lp3-taller1?icon=github) 
+![last_commit](https://img.shields.io/github/last-commit/Acyourproblemboy/lp3-taller1)
 
 - ver [badgen](https://badgen.net/) o [shields](https://shields.io/) para otros tipos de _badges_
 
 ## Autor
 
-- [@estudiante](https://www.github.com/estudiante)
+- [Andres Stivens Cortes Ponce](https://github.com/Acyourproblemboy/lp3-taller1.git)
 
 ## Descripción del Proyecto
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut quam dolor. Quisque elementum est sed massa gravida convallis. Donec volutpat turpis eget lectus feugiat congue. Morbi rutrum auctor eleifend. Etiam iaculis libero tellus, vel aliquet erat tempor sed. Duis efficitur quam vel sapien luctus, sed semper lacus mollis. Suspendisse non nunc eleifend, aliquet elit eget, condimentum augue.
-
-Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus vel nibh fringilla, porta elit vel, consequat libero. Nulla et libero ac nulla ultricies sollicitudin. Sed viverra non nulla id convallis. Morbi vel varius lacus, in maximus nunc. Praesent sed semper diam. Pellentesque vehicula nulla augue, ut porta dolor consequat at.
+    Es una API desarrollada en Python utilizando Flask, Flask-RESTful y Flask-SQLAlchemy para la gestión de un catálogo de videos. La aplicación permite almacenar, consultar, actualizar y eliminar registros de videos (con campos para id, título, número de vistas y likes) guardados en una base de datos SQLite.
+    Además, incluye mejoras adicionales como la obtención de la lista completa de videos y tambien se puede filtrar  por nombre y paginación de resultados
 
 ## Instalación
 
-Morbi quam lectus, tempus sit amet mi non, facilisis dignissim erat. Aenean tortor libero, rhoncus eu eleifend ut, volutpat id nisi. Ut porta eros at ante rutrum pharetra. Integer nec nulla dictum, vestibulum ligula id, hendrerit ex. Morbi eget tortor metus.
+Sigue estos pasos para instalar y ejecutar el proyecto en tu entorno local:
 
 1. Clonar el proyecto
 ```bash
-git clone https://github.com/clubdecomputacion/lp3-taller1.git
+git clone https://github.com/Acyourproblemboy/lp3-taller1.git
 ```
 
 2. Revisar la [`GUIA.md`](docs/GUIA.md)
 
+# Crear el entorno virtual (se creará una carpeta venv/)
+python3 -m venv venv
+# Activarlo (Linux/WSL2)
+source venv/bin/activate
+pip install -r requirements.txt
+pip install flask flask-restful flask-sqlalchemy
+## Paso 10 — Ejecutar y probar la API
+
+Con el entorno virtual activado y parado en la raíz del proyecto:
+
+```bash
+python3 run.py
+```
